@@ -18,7 +18,6 @@ import { FormsModule } from '@angular/forms';
 export class LoadingPage implements OnInit {
 
   constructor(private router: Router) { }
-
   ngOnInit() {
     setTimeout(() => {
       this.router.navigate(['/home']);
