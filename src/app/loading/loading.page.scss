@@ -1,0 +1,67 @@
+ion-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+/* Style pour le header */
+ion-header {
+  --background: #d3d3d3; /* Gris clair */
+}
+
+ion-title {
+  text-align: center; /* Centrer le titre */
+  color: black; /* Couleur du texte */
+  font-weight: bold;
+}
+.custom-toolbar {
+  display: flex; /* Utilisation de Flexbox */
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  position: relative; /* Assure que le ::before se positionne par rapport à l'élément */
+}
+
+.custom-toolbar::before {
+  content: "******* Cym@th *******";
+  position: absolute; /* Permet de mieux contrôler l'alignement */
+  left: 50%; /* Place le contenu à 50% de la largeur */
+  transform: translateX(-50%); /* Centre parfaitement */
+  font-size: 1.2rem; /* Taille ajustable */
+  color: rgb(60, 58, 218); /* Couleur or */
+}
+
+/* Style pour le contenu */
+.custom-content {
+  --background: #000; /* Fond noir */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.custom-spinner {
+  color: gold; /* Couleur or pour le spinner */
+  margin-bottom: 20px;
+}
+
+.custom-title {
+  color: white; /* Titre blanc */
+  font-size: 1.5rem;
+}
+
+/* Style pour le footer */
+ion-footer {
+  --background: #d3d3d3; /* Fond gris clair */
+}
+
+ion-footer ion-title {
+  text-align: center; /* Centrer le texte */
+  color: black; /* Couleur noire pour le texte */
+  font-weight: bold;
+}
