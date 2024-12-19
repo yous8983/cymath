@@ -1,19 +1,41 @@
-<ion-content class="ion-padding">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Cours</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Explorez les différents cours disponibles pour vous.
-    </ion-card-content>
-  </ion-card>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Exercices</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Découvrez les exercices pour tester vos connaissances.
-    </ion-card-content>
-  </ion-card>
+<ion-content class="custom-content">
+  <ion-grid>
+    <ion-row>
+      <!-- Carte Cours -->
+      <ion-col size="12" size-md="6">
+        <ion-card class="card-cours hover-effect">
+          <ion-card-header>
+            <div class="card-title">
+              <ion-icon name="book-outline" class="card-icon"></ion-icon>
+              <h2>Cours</h2>
+            </div>
+          </ion-card-header>
+          <ion-card-content>
+            <p>Accédez à des ressources complètes pour apprendre.</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Carte Exercices -->
+      <ion-col size="12" size-md="6">
+        <ion-card class="card-exercices hover-effect">
+          <ion-card-header>
+            <div class="card-title">
+              <ion-icon name="create-outline" class="card-icon"></ion-icon>
+              <h2>Exercices</h2>
+            </div>
+          </ion-card-header>
+          <ion-card-content>
+            <p>Pratiquez avec des exercices interactifs.</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
