@@ -12,11 +12,20 @@ const routes: Routes = [
     redirectTo: 'loading',
     pathMatch: 'full'
   },
-  //{
-  //  path: 'loading',
-  //  loadChildren: () => import('./loading/loading.module').then( m => m.LoadingPageModule)
-  //},
-  { path: 'loading', component: LoadingPage }, 
+
+  { path: 'loading', component: LoadingPage },   {
+    path: 'list-cours',
+    loadChildren: () => import('./list-cours/list-cours.module').then( m => m.ListCoursPageModule)
+  },
+  {
+    path: 'enonces',
+    loadChildren: () => import('./enonces/enonces.module').then( m => m.EnoncesPageModule)
+  },
+  {
+    path: 'corriges',
+    loadChildren: () => import('./corriges/corriges.module').then( m => m.CorrigesPageModule)
+  },
+
 ];
 
 @NgModule({

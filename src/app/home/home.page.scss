@@ -1,35 +1,6 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
 /* Fond noir pour le contenu */
 .custom-content {
-  // background-color: #000000 !important; /* Assurez un fond noir avec !important */
-    --background: #000; /* Fond noir */
+  --background: #000; /* Fond noir */
   color: #ffffff; /* Texte blanc */
   padding: 20px;
   height: 100%;
@@ -55,7 +26,8 @@ ion-card {
   text-align: center;
   width: 90%; /* Largeur par défaut */
   max-width: 400px; /* Largeur maximale */
-  min-height: 300px; /* Hauteur minimale uniforme */
+  min-height: 350px; /* Hauteur minimale uniforme */
+  max-height: 350px; /* Hauteur maximale uniforme */
   margin: 15px;
   padding: 10px;
   border-radius: 10px;
@@ -103,6 +75,41 @@ ion-card p {
   margin: auto;
   font-size: 1.6rem;
   color: #cccccc; /* Gris clair */
+}
+
+
+/* Container des boutons en flex */
+ion-card .button-container {
+  display: flex; /* Disposition en ligne */
+  justify-content: center; /* Alignement centré */
+  gap: 10px; /* Espacement entre les boutons */
+  margin-top: 20px; /* Espacement supérieur */
+  width: 100%; /* Largeur totale de la carte */
+}
+
+/* Styles généraux des boutons */
+ion-card ion-button {
+  display: flex;
+  width: 120px; /* Largeur uniforme */
+  border: 1px solid #000; /* Bordure noire */
+  text-align: center; /* Alignement du texte */
+}
+
+/* Bouton "Enoncé" */
+ion-button.enonce {
+  --background: #9e9e9e; /* Fond gris */
+  color: #ffffff; /* Texte blanc */
+}
+
+/* Bouton "Corrigé" */
+ion-button.corrige {
+  --background: #226bbe; /* Fond vert */
+  color: #ffffff; /* Texte blanc */
+}
+
+ion-button.corrige:hover ,ion-button.enonce:hover {
+  --background: #0a0a0a; /* Fond vert */
+  color: #6cfd19; /* Texte blanc */
 }
 
 /* Responsive: ajuster la largeur pour petits écrans */
