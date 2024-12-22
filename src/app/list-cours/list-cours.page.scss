@@ -1,0 +1,60 @@
+.custom-content {
+//   --background: #000; /* Fond noir */
+  color: #fff;
+}
+
+/* Groupe des items */
+ion-item-group {
+  margin-bottom: 5px;
+}
+
+/* Style pour les items de titres */
+ion-item {
+  --background: #421a8d; /* Fond violet pour les titres */
+  --color: #fff; /* Texte blanc */
+  border-radius: 8px;
+  margin: 5px 0;
+}
+
+/* Survol des titres */
+ion-item:hover {
+  --background: #6b36c6; /* Violet plus clair au survol */
+  cursor: pointer;
+}
+
+/* Style pour les items des chapitres */
+ion-item.chapitre {
+  --background: #07a576; /* Fond vert pour les chapitres */
+  --color: #fff; /* Texte blanc */
+  border-radius: 5px;
+  margin: 5px 0 5px 20px; /* Indentation pour différencier visuellement */
+}
+
+/* Survol des chapitres */
+ion-item.chapitre:hover {
+  --background: #33c09c; /* Vert clair au survol */
+  cursor: pointer;
+}
+
+/* Icônes */
+ion-icon {
+  font-size: 1.5rem;
+}
+
+
+ion-item.chapitre:hover {
+    --color: gold;
+    --font-weight: bold;
+    --background: #0b0c0c; 
+    // --background: #056e4b; /* Vert légèrement plus clair au survol */
+    cursor: pointer;
+}
+/* Survol des chapitres */
+ion-item.chapitre:hover ion-icon {
+    color: #fff; /* Texte blanc */
+}
+/* Marges pour la liste */
+ion-list {
+  margin-left: 5px;
+  margin-right: 5px;
+}

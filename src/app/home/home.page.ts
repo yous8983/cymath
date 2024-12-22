@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { CommonModule } from '@angular/common'; 
 @Component({
   selector: 'app-home',
@@ -11,6 +11,10 @@ import { CommonModule } from '@angular/common';
 })
 export class HomePage {
 
-  constructor() {}
+ 
+  constructor(private router: Router) {}
 
+  goToListCours() {
+    this.router.navigate(['/list-cours']); // Navigue vers la page de la liste des cours
+  }
 }
