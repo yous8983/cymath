@@ -13,3 +13,4 @@ import { CommonModule } from '@angular/common';
 export class CorrigesPage {
   corrigesList = ['Corrigé 1', 'Corrigé 2', 'Corrigé 3'];
 }
+

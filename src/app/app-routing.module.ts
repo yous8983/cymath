@@ -1,22 +1,24 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { LoadingPage } from './loading/loading.page';
-import { CoursPage } from './cours/cours.page'; // Import standalone component
-import { ChapitreDetailPage } from './chapitre-detail/chapitre-detail.page';
+import { LoadingPage } from './loading/loading.page'; // Standalone component
+import { CoursPage } from './cours/cours.page'; // Standalone component
+import { ChapitreDetailPage } from './chapitre-detail/chapitre-detail.page'; // Standalone component
+import { ListExercicesPage } from './list-exercices/list-exercices.page'; // Standalone component
+import { ExerciceDetailPage } from './exercice-detail/exercice-detail.page'; // Standalone component
 
 const routes: Routes = [
+  // Default and fallback routes
+  { path: '', redirectTo: 'loading', pathMatch: 'full' },
+  { path: 'loading', component: LoadingPage },
+
+  // Home module (lazy loaded)
   {
     path: 'home',
     loadChildren: () =>
       import('./home/home.module').then((m) => m.HomePageModule),
   },
-  {
-    path: '',
-    redirectTo: 'loading',
-    pathMatch: 'full',
-  },
 
-  { path: 'loading', component: LoadingPage },
+  // List Cours module (lazy loaded)
   {
     path: 'list-cours',
     loadChildren: () =>
@@ -24,6 +26,35 @@ const routes: Routes = [
         (m) => m.ListCoursPageModule
       ),
   },
+
+  // Cours standalone component
+  { path: 'cours', component: CoursPage },
+  { path: 'cours/:id', component: CoursPage },
+
+  // Chapitre detail standalone component
+  { path: 'chapitre/:id', component: ChapitreDetailPage },
+
+  // Exercices module and standalone components
+  { path: 'list-exercices', component: ListExercicesPage },
+  { path: 'exercice/:id', component: ExerciceDetailPage },
+
+  // Enoncés and corrigés
+  {
+    path: 'enonce/:id',
+    loadComponent: () =>
+      import('./enonce-detail/enonce-detail.page').then(
+        (m) => m.EnonceDetailPage
+      ),
+  },
+  {
+    path: 'corrige/:id',
+    loadComponent: () =>
+      import('./corrige-detail/corrige-detail.page').then(
+        (m) => m.CorrigeDetailPage
+      ),
+  },
+
+  // Enoncés and corrigés lists (lazy loaded)
   {
     path: 'enonces',
     loadChildren: () =>
@@ -34,21 +65,12 @@ const routes: Routes = [
     loadChildren: () =>
       import('./corriges/corriges.module').then((m) => m.CorrigesPageModule),
   },
-  {
-    path: 'cours',
-    loadComponent: () => import('./cours/cours.page').then((m) => m.CoursPage),
-  },
-  { path: 'cours/:id', component: CoursPage },   {
-    path: 'chapitre-detail',
-    loadChildren: () => import('./chapitre-detail/chapitre-detail.module').then( m => m.ChapitreDetailPageModule)
-  },
-   { path: 'chapitre/:id', component: ChapitreDetailPage }, 
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

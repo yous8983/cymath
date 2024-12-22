@@ -4,16 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CoursPageRoutingModule } from './cours-routing.module';
+import { EnonceDetailPageRoutingModule } from './enonce-detail-routing.module';
 
-
+import { EnonceDetailPage } from './enonce-detail.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CoursPageRoutingModule
+    EnonceDetailPageRoutingModule
   ],
+  declarations: [EnonceDetailPage]
 })
-export class CoursPageModule {}
+export class EnonceDetailPageModule {}

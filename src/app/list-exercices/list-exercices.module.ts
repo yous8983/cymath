@@ -4,8 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CoursPageRoutingModule } from './cours-routing.module';
-
+import { ListExercicesPageRoutingModule } from './list-exercices-routing.module';
 
 
 @NgModule({
@@ -13,7 +12,8 @@ import { CoursPageRoutingModule } from './cours-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    CoursPageRoutingModule
+    ListExercicesPageRoutingModule
   ],
+
 })
-export class CoursPageModule {}
+export class ListExercicesPageModule {}

@@ -9,7 +9,6 @@
     <ion-row>
       <!-- Carte Cours -->
       <ion-col size="12" size-md="6" class="card-container">
-      
         <ion-card class="card-cours hover-effect" (click)="goToListCours()">
           <ion-card-header>
             <div class="card-title">
@@ -24,8 +23,8 @@
 </ion-col>
 
       <!-- Carte Exercices -->
-      <ion-col size="12" size-md="6" class="card-container"> -->
-        <ion-card class="card-exercices hover-effect">
+      <ion-col size="12" size-md="6" class="card-container"> 
+        <ion-card class="card-exercices hover-effect" (click)="goToListExercices()">
           <ion-card-header>
             <div class="card-title">
               <ion-icon name="create-outline" class="card-icon"></ion-icon>
@@ -34,11 +33,6 @@
           </ion-card-header>
           <ion-card-content>
             <p>Vous trouverez les exercices des différentes leçons ainsi que leurs solutions.</p>
-            <!-- Boutons pour Enoncés et Corrigés -->
-            <div class="buttons-container">
-              <ion-button expand="block"  class="enonce" [routerLink]="['/enonces']">Enoncés</ion-button>
-              <ion-button expand="block" class="corrige" [routerLink]="['/corriges']">Corrigés</ion-button>
-            </div>
           </ion-card-content>
         </ion-card>
       </ion-col>

@@ -1,0 +1,120 @@
+.custom-content {
+//   --background: #000; /* Fond noir */
+  color: #fff;
+}
+
+/* Groupe des items */
+ion-item-group {
+  margin-bottom: 5px;
+}
+
+/* Style pour les items de titres */
+ion-item {
+  --background: #421a8d; /* Fond violet pour les titres */
+  --color: #fff; /* Texte blanc */
+  border-radius: 8px;
+  margin: 5px 0;
+}
+
+/* Survol des titres */
+ion-item:hover {
+  --background: #6b36c6; /* Violet plus clair au survol */
+  cursor: pointer;
+}
+
+/* Style pour les items des chapitres */
+ion-item.chapitre {
+  --background: #07a576; /* Fond vert pour les chapitres */
+  --color: #fff; /* Texte blanc */
+  border-radius: 5px;
+  margin: 5px 0 5px 20px; /* Indentation pour différencier visuellement */
+}
+
+/* Survol des chapitres */
+ion-item.chapitre:hover {
+  --background: #33c09c; /* Vert clair au survol */
+  cursor: pointer;
+}
+
+/* Icônes */
+ion-icon {
+  font-size: 1.5rem;
+}
+
+
+ion-item.enonce-mode:hover,
+ion-item.corrige-mode:hover {
+    --color: gold;
+    --font-weight: bold;
+    --background: #0b0c0c; 
+    // --background: #056e4b; /* Vert légèrement plus clair au survol */
+    cursor: pointer;
+}
+/* Survol des chapitres */
+ion-item.enonce-mode:hover ion-icon,
+ion-item.corrige-mode:hover ion-icon {
+    color: #fff; /* Texte blanc */
+}
+
+ion-segment {
+  margin: 10px;
+}
+
+ion-segment-button {
+  --background: #8ed4e9; /* Fond violet */
+  --color: #fff; /* Texte blanc */
+}
+
+ion-segment-button.checked {
+  --background: #6b36c6; /* Violet clair pour l'option sélectionnée */
+  --color: gold; /* Texte doré */
+}
+
+
+.custom-content {
+  color: #fff;
+}
+
+ion-item-group {
+  margin-bottom: 5px;
+}
+
+/* Boutons - mode Enoncé */
+ion-button.enonce-mode,
+ion-item.enonce-mode {
+  --background: #f3d52e; /* Fond gris pour les chapitres en mode Corrigé */
+  --color: #fff;
+  border-radius: 8px;
+  margin: 5px 0;
+}
+/* Boutons - mode Corrigé */
+ion-button.corrige-mode,
+ion-item.corrige-mode  {
+  --background: #07a576; /* Fond vert pour les chapitres en mode Corrigé */
+  --color: #fff;
+  border-radius: 8px;
+  margin: 5px 0;
+}
+
+
+
+/* Marges pour la liste */
+ion-list {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+/* Survol des boutons */
+ion-segment-button.corrige-mode:hover {
+  color: #07a576; 
+  background-color: #07a576;
+  font-style: italic;
+  font-weight: bold;
+}
+ion-segment-button.enonce-mode:hover {
+  color: gold;
+  background-color: gold;
+  font-style: italic;
+  font-weight: bold;
+}
