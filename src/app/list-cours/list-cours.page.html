@@ -11,8 +11,24 @@
 
 <ion-content class="custom-content">
   <ion-list>
-    <ion-item *ngFor="let cours of coursList">
-      {{ cours }}
-    </ion-item>
+    <ion-item-group *ngFor="let cours of coursList">
+      <!-- Titre du cours -->
+      <ion-item (click)="toggleChapters(cours.id)">
+        <ion-icon 
+          [name]="expandedCoursId === cours.id ? 'chevron-down-outline' : 'chevron-forward-outline'" 
+          slot="start">
+        </ion-icon>
+        {{ cours.titre }}
+      </ion-item>
+
+      <!-- Liste des chapitres -->
+      <ion-list *ngIf="expandedCoursId === cours.id">
+        <ion-item  class="chapitre"  *ngFor="let chapitre of cours.chapitres" (click)="goToChapterDetail(chapitre.id)">
+          <ion-icon name="book-outline" slot="start"></ion-icon>
+          {{ chapitre.titre }}
+        </ion-item>
+      </ion-list>
+    </ion-item-group>
   </ion-list>
 </ion-content>
+
