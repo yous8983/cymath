@@ -3,13 +3,20 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule, Router } from '@angular/router'; // Importation de Router
 import { FormsModule } from '@angular/forms'; // Importation de FormsModule pour ngModel
-
+import { ExercicesService } from '../services/exercices.service'; // Import du service
+import { ChapitreListComponent } from '../chapitre-list/chapitre-list.component';
 @Component({
   selector: 'app-list-exercices',
   templateUrl: './list-exercices.page.html',
   styleUrls: ['./list-exercices.page.scss'],
   standalone: true,
-  imports: [IonicModule, RouterModule, CommonModule, FormsModule], // Importation des modules nécessaires
+  imports: [
+    IonicModule,
+    RouterModule,
+    CommonModule,
+    FormsModule,
+    ChapitreListComponent,
+  ], // Importation des modules nécessaires
 })
 export class ListExercicesPage {
   exercicesList = [
@@ -33,12 +40,27 @@ export class ListExercicesPage {
 
   expandedExerciceId: number | null = null; // ID de l'exercice déplié
   viewMode: string = 'enonce'; // Par défaut, mode "Enoncé"
+  selectedChapitreId: number | null = null; // Chapitre sélectionné
 
-  constructor(private router: Router) {} // Injection du Router
 
-  toggleExercices(exerciceId: number) {
-    this.expandedExerciceId =
-      this.expandedExerciceId === exerciceId ? null : exerciceId;
+  constructor(
+    private router: Router,
+    private exercicesService: ExercicesService
+  ) {}
+
+  ngOnInit() {
+    this.exercicesList = this.exercicesService.getExercices(); // Récupération des exercices
+  }
+
+  toggleExercices(exerciceId: number, chapitres: any[]) {
+    // Si l'exercice est déplié, on le replie, sinon on le déplie
+    if (this.expandedExerciceId === exerciceId) {
+      this.expandedExerciceId = null;
+      this.selectedChapitreId = null; // Réinitialiser la sélection
+    } else {
+      this.expandedExerciceId = exerciceId;
+      this.selectedChapitreId = chapitres.length > 0 ? chapitres[0].id : null; // Sélectionner le premier chapitre
+    }
   }
 
   goToExerciceDetail(chapitreId: number) {
@@ -52,4 +74,13 @@ export class ListExercicesPage {
   goToCorrigePage(exerciceId: number) {
     this.router.navigate(['/corriges', exerciceId]); // Redirection vers la page du corrigé
   }
+  
+  getClasses() {
+    return {
+      'enonce-mode': this.viewMode === 'enonce',
+      'corrige-mode': this.viewMode === 'corrige'
+    };
+  }
+
+  
 }

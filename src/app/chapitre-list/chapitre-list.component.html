@@ -1,0 +1,30 @@
+<ion-list>
+  <ion-item *ngFor="let chapitre of chapitres"
+            [class.selected]="chapitre.id === selectedChapitreId"
+            [ngClass]="getClasses()"
+            (click)="onChapitreClick(chapitre.id)">
+    <!-- <ion-icon [ngClass]="getClasses()" name="document-text-outline" slot="start" *ngIf="viewMode === 'enonce'"></ion-icon>
+    <ion-icon name="checkmark-circle-outline" slot="start" *ngIf="viewMode === 'corrige'"></ion-icon> -->
+
+       <!-- Liste des enoncés ou corrigés -->
+      <!-- <ion-list *ngIf="expandedExerciceId === exercice.id">
+        <div *ngFor="let chapitre of exercice.chapitres" > -->
+        <!-- Liste des enoncés -->
+              <div *ngIf="viewMode === 'enonce'" class="enonce-mode mode-container">
+  <ion-icon name="document-text-outline" class="icon"></ion-icon>
+  <span class="container">Enoncé : {{ chapitre.titre }}</span>
+</div>
+
+        <!-- Liste des corrigés -->
+
+
+<div *ngIf="viewMode === 'corrige'" class="corrige-mode mode-container">
+  <ion-icon name="checkmark-circle-outline" class="icon"></ion-icon>
+  <span class="container">Corrigé : {{ chapitre.titre }}</span>
+</div>
+
+        <!-- </div>
+      </ion-list> -->
+
+  </ion-item>
+</ion-list>

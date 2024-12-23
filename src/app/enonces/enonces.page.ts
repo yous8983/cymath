@@ -10,5 +10,9 @@ import { CommonModule } from '@angular/common';
   imports: [IonicModule, RouterModule, CommonModule],
 })
 export class EnoncesPage {
-  enoncesList = ['Exercice 1 : Calcul intégral', 'Exercice 2 : Probabilités', 'Exercice 3 : Électrostatique'];
+  enoncesList = [
+    'Exercice 1 : Calcul intégral',
+    'Exercice 2 : Probabilités',
+    'Exercice 3 : Électrostatique',
+  ];
 }
