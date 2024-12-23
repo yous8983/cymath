@@ -1,3 +1,4 @@
+/***/
 .custom-content {
 //   --background: #000; /* Fond noir */
   color: #fff;
@@ -6,6 +7,7 @@
 /* Groupe des items */
 ion-item-group {
   margin-bottom: 5px;
+
 }
 
 /* Style pour les items de titres */
@@ -14,7 +16,28 @@ ion-item {
   --color: #fff; /* Texte blanc */
   border-radius: 8px;
   margin: 5px 0;
+
 }
+
+.mode-container {
+  display: flex; /* Utilise Flexbox */
+  align-items: center; /* Centre verticalement le contenu */
+  gap: 8px; /* Espace entre l'icône et le texte */
+ /* Marge à droite */
+}
+
+.icon {
+  font-size: 24px; /* Taille de l'icône (ajustez selon vos besoins) */
+  color: var(--ion-color-primary); /* Couleur personnalisée si besoin */
+}
+
+.container {
+  display: flex;
+  align-items: center; /* Assure que le contenu du texte est bien centré verticalement */
+  font-size: 16px; /* Taille de la police (ajustez si nécessaire) */
+
+}
+
 
 /* Survol des titres */
 ion-item:hover {
@@ -30,7 +53,7 @@ ion-item.chapitre:hover {
 
 /* Icônes */
 ion-icon {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 
 ion-item.enonce-mode:hover,
@@ -41,7 +64,6 @@ ion-item.corrige-mode:hover {
     // --background: #056e4b; /* Vert légèrement plus clair au survol */
     cursor: pointer;
 }
-
 ion-segment {
   margin: 10px;
 }
@@ -59,7 +81,6 @@ ion-item.enonce-mode {
   border-radius: 8px;
   margin: 5px 0;
 }
-
 /* Boutons - mode Corrigé */
 ion-button.corrige-mode,
 ion-item.corrige-mode  {
@@ -69,23 +90,13 @@ ion-item.corrige-mode  {
   margin: 5px 0;
 }
 
-/* Marges pour la liste */
+// /* Marges pour la liste */
 ion-list {
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 25px; /* Marge à gauche */
+  margin-right: 25px;
 }
 
-/* Survol des boutons */
-ion-segment-button.corrige-mode:hover {
-  color: #07a576; 
-  background-color: #07a576;
-  font-style: italic;
-  font-weight: bold;
-}
-ion-segment-button.enonce-mode:hover {
-  color: gold;
-  background-color: gold;
-  font-style: italic;
-  font-weight: bold;
-}
+
+
+
 
