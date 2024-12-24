@@ -14,11 +14,13 @@ export class HomePage {
  
   constructor(private router: Router) {}
 
-  goToListCours() {
-    this.router.navigate(['/list-cours']); // Navigue vers la page de la liste des cours
+    goToListCours(event: Event): void {
+    event.stopPropagation(); // Empêche la propagation
+    this.router.navigate(['/list-cours']);
   }
-  
-  goToListExercices() {
-    this.router.navigate(['/list-exercices']); // Navigue vers la page de la liste des cours
+
+  goToListExercices(event: Event): void {
+    event.stopPropagation(); // Empêche la propagation
+    this.router.navigate(['/list-exercices']);
   }
 }

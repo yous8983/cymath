@@ -9,22 +9,22 @@
     <ion-row>
       <!-- Carte Cours -->
       <ion-col size="12" size-md="6" class="card-container">
-        <ion-card class="card-cours hover-effect" (click)="goToListCours()">
+        <ion-card class="card-cours hover-effect" (click)="goToListCours($event)">
           <ion-card-header>
             <div class="card-title">
               <ion-icon name="book-outline" class="card-icon"></ion-icon>
               <h2>Cours</h2>
             </div>
           </ion-card-header>
-  <ion-card-content>
-    <p>Accédez à la liste des cours pour le programme de Terminal.</p>
-  </ion-card-content>
-</ion-card>
-</ion-col>
+          <ion-card-content>
+            <p>Accédez à la liste des cours pour le programme de Terminal.</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
 
       <!-- Carte Exercices -->
-      <ion-col size="12" size-md="6" class="card-container"> 
-        <ion-card class="card-exercices hover-effect" (click)="goToListExercices()">
+      <ion-col size="12" size-md="6" class="card-container">
+        <ion-card class="card-exercices hover-effect" (click)="goToListExercices($event)">
           <ion-card-header>
             <div class="card-title">
               <ion-icon name="create-outline" class="card-icon"></ion-icon>
