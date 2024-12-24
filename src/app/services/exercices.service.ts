@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ExercicesService {
   private exercicesList = [
@@ -24,7 +24,7 @@ export class ExercicesService {
         { id: 204, titre: 'Equations différentielles' },
       ],
     },
-       {
+    {
       id: 3,
       titre: 'Exercices | - Géométrie',
       chapitres: [
@@ -32,17 +32,12 @@ export class ExercicesService {
         { id: 302, titre: 'Barycentre et produit scalaire' },
         { id: 303, titre: 'Configuration dans l’espace' },
         { id: 304, titre: 'Transformations du plan' },
-        
       ],
     },
     {
       id: 4,
       titre: 'Exercices | - Organisation et gestion de données',
-      chapitres: [
-         { id: 401, titre: 'Probabilités et échantillonnage' },
-       
-
-      ],
+      chapitres: [{ id: 401, titre: 'Probabilités et échantillonnage' }],
     },
   ];
 
