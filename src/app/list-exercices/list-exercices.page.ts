@@ -42,7 +42,6 @@ export class ListExercicesPage {
   viewMode: string = 'enonce'; // Par défaut, mode "Enoncé"
   selectedChapitreId: number | null = null; // Chapitre sélectionné
 
-
   constructor(
     private router: Router,
     private exercicesService: ExercicesService
@@ -52,35 +51,29 @@ export class ListExercicesPage {
     this.exercicesList = this.exercicesService.getExercices(); // Récupération des exercices
   }
 
-  toggleExercices(exerciceId: number, chapitres: any[]) {
-    // Si l'exercice est déplié, on le replie, sinon on le déplie
-    if (this.expandedExerciceId === exerciceId) {
-      this.expandedExerciceId = null;
-      this.selectedChapitreId = null; // Réinitialiser la sélection
-    } else {
-      this.expandedExerciceId = exerciceId;
-      this.selectedChapitreId = chapitres.length > 0 ? chapitres[0].id : null; // Sélectionner le premier chapitre
-    }
+
+   toggleExercices(exerciceId: number) {
+    this.expandedExerciceId = this.expandedExerciceId === exerciceId ? null : exerciceId;
+  }
+
+  goToEnoncePage(exerciceId: number, event: Event) {
+    event.stopPropagation();
+    this.router.navigate(['/enonce', exerciceId]);
+  }
+
+  goToCorrigePage(exerciceId: number, event: Event) {
+    event.stopPropagation();
+    this.router.navigate(['/corrige', exerciceId]);
   }
 
   goToExerciceDetail(chapitreId: number) {
-    this.router.navigate(['/exercice', chapitreId]); // Redirection vers la page des détails de l'exercice
+    this.router.navigate(['/chapitre', chapitreId]);
   }
 
-  goToEnoncePage(exerciceId: number) {
-    this.router.navigate(['/enonces', exerciceId]); // Redirection vers la page de l'énoncé
-  }
-
-  goToCorrigePage(exerciceId: number) {
-    this.router.navigate(['/corriges', exerciceId]); // Redirection vers la page du corrigé
-  }
-  
   getClasses() {
     return {
       'enonce-mode': this.viewMode === 'enonce',
-      'corrige-mode': this.viewMode === 'corrige'
+      'corrige-mode': this.viewMode === 'corrige',
     };
   }
-
-  
 }

@@ -21,37 +21,34 @@
   </ion-segment>
 
   <ion-list>
-  <ion-item-group *ngFor="let exercice of exercicesList">
-    <!-- Titre de l'exercice -->
-    <ion-item (click)="toggleExercices(exercice.id, exercice.chapitres)">
-      <ion-icon 
-        [name]="expandedExerciceId === exercice.id ? 'chevron-down-outline' : 'chevron-forward-outline'" 
-        slot="start">
-      </ion-icon>
-      {{ exercice.titre }}
+    <ion-item-group *ngFor="let exercice of exercicesList">
+      <!-- Titre de l'exercice -->
+      <ion-item (click)="toggleExercices(exercice.id)">
+        <ion-icon 
+          [name]="expandedExerciceId === exercice.id ? 'chevron-down-outline' : 'chevron-forward-outline'" 
+          slot="start">
+        </ion-icon>
+        {{ exercice.titre }}
 
-      <!-- Boutons Enoncé et Corrigé -->
-      <ion-buttons slot="end">
-        <ion-button class="enonce-mode" *ngIf="viewMode === 'enonce'" (click)="goToEnoncePage(exercice.id)">
-          Enoncé
-        </ion-button>
-        <ion-button class="corrige-mode" *ngIf="viewMode === 'corrige'" (click)="goToCorrigePage(exercice.id)">
-          Corrigé
-        </ion-button>
-      </ion-buttons>
-    </ion-item>
+        <!-- Boutons Enoncé et Corrigé -->
+        <ion-buttons slot="end">
+          <ion-button class="enonce-mode" *ngIf="viewMode === 'enonce'" (click)="goToEnoncePage(exercice.id, $event)">
+            Enoncé
+          </ion-button>
+          <ion-button class="corrige-mode" *ngIf="viewMode === 'corrige'" (click)="goToCorrigePage(exercice.id, $event)">
+            Corrigé
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
 
-    <!-- Liste des chapitres -->
-    <div *ngIf="expandedExerciceId === exercice.id">
-      <app-chapitre-list
-        [chapitres]="exercice.chapitres"
-        [viewMode]="viewMode"
-        [selectedChapitreId]="selectedChapitreId"
-        [ngClass]="getClasses()"
-        (chapitreClick)="goToExerciceDetail($event)">
-      </app-chapitre-list>
-    </div>
-  </ion-item-group>
-</ion-list>
-
+      <!-- Liste des chapitres -->
+      <div *ngIf="expandedExerciceId === exercice.id">
+        <app-chapitre-list
+          [chapitres]="exercice.chapitres"
+          [viewMode]="viewMode"
+          (chapitreClick)="goToExerciceDetail($event)">
+        </app-chapitre-list>
+      </div>
+    </ion-item-group>
+  </ion-list>
 </ion-content>
