@@ -5,11 +5,46 @@
         <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Détail du Chapitre</ion-title>
+    <div class="chapitre-header">
+  <img *ngIf="imageUrl" [src]="imageUrl" class="chapitre-image" (click)="$event.stopPropagation()" />
+  <ion-title class="chapitre-title">{{ chapitreTitle }}</ion-title>
+</div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <h1>Chapitre ID : {{ chapitreId }}</h1>
-  <p>{{ chapitreTitle }}</p>
+  <ion-content class="ion-padding">
+ 
+   <!-- Afficher l'image si elle est définie -->
+      <div class="chapitre-header">
+  <img *ngIf="imageUrl" [src]="imageUrl" class="chapitre-image" (click)="$event.stopPropagation()" />
+  <ion-title class="chapitre-title">{{ chapitreTitle }}</ion-title>
+</div>
+
+  <!-- Afficher un visualiseur de fichier si un fichier est défini -->
+  <div *ngIf="fileUrl">
+    <iframe 
+      [src]="sanitizedFileUrl" 
+      width="100%" 
+      height="500px" 
+      style="border: none;" 
+      (click)="$event.stopPropagation()">
+    </iframe>
+  </div>
+    <!-- Afficher une boîte grise si aucun fichier ou image n'est défini -->
+  <div *ngIf="!fileUrl && !imageUrl" class="no-content-box">
+    <p>Aucun contenu associé pour ce chapitre: <span class="span-no-content">"{{ chapitreTitle }}"</span></p>
+  </div>
+
+
+    <!-- Afficher un lien de téléchargement pour un fichier si présent -->
+  <div *ngIf="fileUrl">
+    <a [href]="fileUrl" download target="_blank">
+      <ion-button color="secondary">
+        <ion-icon slot="start" name="download-outline"></ion-icon>
+        Télécharger le fichier
+      </ion-button>
+    </a>
+  </div>
 </ion-content>
+

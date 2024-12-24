@@ -3,41 +3,43 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { ChapitreDetailService } from '../services/chapitre-detail.service'; // Mettez à jour le chemin selon votre projet
 
 @Component({
   selector: 'app-chapitre-detail',
   templateUrl: './chapitre-detail.page.html',
   styleUrls: ['./chapitre-detail.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule, RouterModule]  // 
+  imports: [CommonModule, IonicModule, RouterModule],
 })
 export class ChapitreDetailPage implements OnInit {
   chapitreId!: number;
   chapitreTitle!: string;
+  fileUrl: string | null = null;
+  imageUrl: string | null = null;
+  sanitizedFileUrl: SafeResourceUrl | null = null;
 
-  // Déclaration du type explicite des clés comme étant des nombres
-  chapitreDetails: { [key: number]: string } = {
-    101: 'Détails sur Arithmétique',
-    102: 'Détails sur les Nombres Complexes',
-    103: 'Détails sur les Matrices et systèmes linéaires',
-    201: 'Détails sur l’Intégration',
-    202: 'Détails sur les Fonctions logarithmes',
-    203: 'Détails sur les Fonctions exponentielles',
-    204: 'Détails sur les Équations différentielles',
-    301: 'Détails sur les Angles orientés',
-    302: 'Détails sur le Barycentre et produit scalaire',
-    303: 'Détails sur les Configurations dans l’espace',
-    304: 'Détails sur les Transformations du plan',
-    401: 'Détails sur Probabilités et échantillonnage',
-  };
-
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private chapitreDetailService: ChapitreDetailService,
+    private sanitizer: DomSanitizer
+  ) {}
 
   ngOnInit() {
-    // Récupérer l'ID du chapitre à partir de l'URL
     this.chapitreId = Number(this.route.snapshot.paramMap.get('id'));
+    const chapitreDetail = this.chapitreDetailService.getChapitreDetail(
+      this.chapitreId
+    );
 
-    // Accéder à l'objet chapitreDetails avec l'ID comme clé numérique
-    this.chapitreTitle = this.chapitreDetails[this.chapitreId] || 'Chapitre inconnu';
+    this.chapitreTitle = chapitreDetail.title;
+    this.fileUrl = chapitreDetail.fileUrl || null;
+    this.imageUrl = chapitreDetail.imageUrl || null;
+  
+        // Sanitize the file URL
+    if (this.fileUrl) {
+      this.sanitizedFileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.fileUrl);
+    }
+
   }
 }
