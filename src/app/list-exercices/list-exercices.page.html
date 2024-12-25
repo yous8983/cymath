@@ -11,7 +11,7 @@
 
 <ion-content class="custom-content">
   <!-- Segment pour changer la vue (Enoncé / Corrigé) -->
-  <ion-segment [(ngModel)]="viewMode" color="tertiary">
+ <ion-segment [(ngModel)]="viewMode" color="tertiary">
     <ion-segment-button class="enonce-mode" value="enonce">
       Enoncé
     </ion-segment-button>
@@ -20,26 +20,26 @@
     </ion-segment-button>
   </ion-segment>
 
-  <ion-list>
+   <ion-list>
     <ion-item-group *ngFor="let exercice of exercicesList">
       <!-- Titre de l'exercice -->
-      <ion-item (click)="toggleExercices(exercice.id)">
-        <ion-icon 
+       <ion-item (click)="toggleExercices(exercice.id)">
+      <ion-icon 
           [name]="expandedExerciceId === exercice.id ? 'chevron-down-outline' : 'chevron-forward-outline'" 
           slot="start">
         </ion-icon>
         {{ exercice.titre }}
 
         <!-- Boutons Enoncé et Corrigé -->
-        <ion-buttons slot="end">
+         <ion-buttons slot="end">
           <ion-button class="enonce-mode" *ngIf="viewMode === 'enonce'" (click)="goToEnoncePage(exercice.id, $event)">
             Enoncé
           </ion-button>
           <ion-button class="corrige-mode" *ngIf="viewMode === 'corrige'" (click)="goToCorrigePage(exercice.id, $event)">
             Corrigé
           </ion-button>
-        </ion-buttons>
-      </ion-item>
+        </ion-buttons> 
+     </ion-item> 
 
       <!-- Liste des chapitres -->
       <div *ngIf="expandedExerciceId === exercice.id">
@@ -50,5 +50,5 @@
         </app-chapitre-list>
       </div>
     </ion-item-group>
-  </ion-list>
+  </ion-list> 
 </ion-content>

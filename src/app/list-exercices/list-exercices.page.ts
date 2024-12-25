@@ -56,18 +56,29 @@ export class ListExercicesPage {
     this.expandedExerciceId = this.expandedExerciceId === exerciceId ? null : exerciceId;
   }
 
-  goToEnoncePage(exerciceId: number, event: Event) {
-    event.stopPropagation();
-    this.router.navigate(['/enonce', exerciceId]);
-  }
+goToEnoncePage(exerciceId: number, event: Event) {
+  event.stopPropagation();
+  console.log('Navigating to Enonce Page with ID:', exerciceId);
+  this.router.navigate(['/enonce', exerciceId]).catch((err) =>
+    console.error('Navigation error:', err)
+  );
+}
+
 
   goToCorrigePage(exerciceId: number, event: Event) {
     event.stopPropagation();
     this.router.navigate(['/corrige', exerciceId]);
   }
 
-  goToExerciceDetail(chapitreId: number) {
-    this.router.navigate(['/chapitre', chapitreId]);
+  goToExerciceDetail(exerciceId: number) {
+    if(this.viewMode === 'enonce'){
+        this.router.navigate(['/enonce', exerciceId]);
+    }
+    
+    if(this.viewMode === 'corrige'){
+        this.router.navigate(['/corrige', exerciceId]);
+    }
+
   }
 
   getClasses() {

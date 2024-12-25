@@ -1,13 +1,49 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>enonce-detail</ion-title>
-  </ion-toolbar>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/list-exercices']">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <div class="enonce-header">
+  <img *ngIf="imageUrl" [src]="imageUrl" class="enonce-image" (click)="$event.stopPropagation()" />
+  <ion-title class="enonce-title">Enoncé: {{ enonceTitle }}</ion-title>
+</div>
+</ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">enonce-detail</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <!-- Vue 1 : Affichage du PDF -->
+  <div *ngIf="checkFile() === 1">
+    <iframe 
+      [src]="sanitizedFileUrl" 
+      width="100%" 
+      height="500px" 
+      style="border: none;" 
+      (click)="$event.stopPropagation()">
+    </iframe>
+  </div>
+
+  <!-- Vue 2 : Affichage du contenu texte -->
+  <div *ngIf="checkFile() === 2">
+  <pre class="txt-content-box">{{ textContent }}</pre>
+</div>
+
+  <!-- Vue 3 : Aucun contenu -->
+  <div *ngIf="checkFile() === 3" class="no-content-box">
+    <p>Aucun contenu associé pour cet énoncé : 
+      <span class="span-no-content">"{{ enonceTitle }}"</span>
+    </p>
+  </div>
+
+  <!-- Lien de téléchargement -->
+  <div *ngIf="fileUrl">
+    <a [href]="fileUrl" download target="_blank">
+      <ion-button color="secondary">
+        <ion-icon slot="start" name="download-outline"></ion-icon>
+        Télécharger le fichier
+      </ion-button>
+    </a>
+  </div>
 </ion-content>
+
