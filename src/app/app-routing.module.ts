@@ -38,7 +38,7 @@ const routes: Routes = [
   { path: 'list-exercices', component: ListExercicesPage },
   { path: 'exercice/:id', component: ExerciceDetailPage },
 
-  // Enoncés and corrigés
+  // Enoncés and corrigés standalone components
   {
     path: 'enonce/:id',
     loadComponent: () =>

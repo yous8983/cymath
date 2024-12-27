@@ -1,12 +1,18 @@
+ion-content{
+  --overflow: scroll;
+}
+
+
 /* Fond noir pour le contenu */
 .custom-content {
   --background: #000; /* Fond noir */
   color: #ffffff; /* Texte blanc */
   padding: 20px;
-  height: 100%;
-  min-height: 100vh; /* Couvrir toute la hauteur de l'écran */
-  display: flex;
-  flex-direction: column;
+  min-height: 100%; /* Couvrir toute la hauteur de l'écran */
+  // display: flex;
+  // flex-direction: column;
+  box-sizing: border-box;
+  overflow-y: scroll;
 }
 
 /* Styles pour les cartes */
@@ -24,10 +30,10 @@ ion-card {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  width: 90%; /* Largeur par défaut */
+  width: auto; /* Largeur par défaut */
   max-width: 400px; /* Largeur maximale */
-  min-height: 350px; /* Hauteur minimale uniforme */
-  max-height: 350px; /* Hauteur maximale uniforme */
+  min-height: 200px; /* Hauteur minimale uniforme */
+  max-height: auto; /* Hauteur maximale uniforme */
   margin: 15px;
   padding: 10px;
   border-radius: 10px;
@@ -73,7 +79,7 @@ ion-card {
 /* Description centrée */
 ion-card p {
   margin: auto;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   color: #cccccc; /* Gris clair */
 }
 
@@ -117,6 +123,10 @@ ion-button.corrige:hover ,ion-button.enonce:hover {
   ion-card {
     width: 100%; /* Occuper toute la largeur sur petits écrans */
     max-width: 100%; /* Pas de limite de largeur */
+  }
+  
+  .custom-content {
+    padding: 10px; /* Ajustez les marges pour petits écrans */
   }
 }
 

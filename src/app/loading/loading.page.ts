@@ -21,6 +21,6 @@ export class LoadingPage implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.router.navigate(['/home']);
-    }, 3000); // Redirection après 3 secondes
+    }, 5000); // Redirection après 3 secondes
   }
 }

@@ -24,7 +24,7 @@ ion-title {
 }
 
 .custom-toolbar::before {
-  content: "******* Cym@th *******";
+  content: "******* Terminal C *******";
   position: absolute; /* Permet de mieux contrôler l'alignement */
   left: 50%; /* Place le contenu à 50% de la largeur */
   transform: translateX(-50%); /* Centre parfaitement */
@@ -35,7 +35,6 @@ ion-title {
 /* Style pour le contenu */
 .custom-content {
   --background: #000; /* Fond noir */
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,4 +62,14 @@ ion-footer ion-title {
   text-align: center; /* Centrer le texte */
   color: black; /* Couleur noire pour le texte */
   font-weight: bold;
+}
+
+.custom-loading{
+  background-color:rgb(19, 155, 173);
+  padding-top:20px;
+  padding-bottom:20px;
+  margin-top:35px;
+  margin-bottom:15px;
+  max-height: 90vh;
+  max-width: 100vw;
 }

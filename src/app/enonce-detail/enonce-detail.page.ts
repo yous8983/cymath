@@ -26,8 +26,7 @@ export class EnonceDetailPage implements OnInit {
     private route: ActivatedRoute,
     private enonceDetailService: EnonceDetailService,
     private sanitizer: DomSanitizer,
-    private http: HttpClient,
-    
+    private http: HttpClient
   ) {}
 
   ngOnInit() {

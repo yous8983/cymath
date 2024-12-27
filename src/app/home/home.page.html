@@ -1,13 +1,14 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Home</ion-title>
+    <ion-title>Mathématiques Terminale C </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="custom-content">
-  <ion-grid>
-    <ion-row>
-      <!-- Carte Cours -->
+
+    <ion-grid >
+      <ion-row>
+        <!-- Carte Cours -->
       <ion-col size="12" size-md="6" class="card-container">
         <ion-card class="card-cours hover-effect" (click)="goToListCours($event)">
           <ion-card-header>
@@ -17,11 +18,11 @@
             </div>
           </ion-card-header>
           <ion-card-content>
-            <p>Accédez à la liste des cours pour le programme de Terminal.</p>
+            <p>Accédez à la liste des cours de Mathématiques pour le programme de Terminale C.</p>
           </ion-card-content>
         </ion-card>
       </ion-col>
-
+      
       <!-- Carte Exercices -->
       <ion-col size="12" size-md="6" class="card-container">
         <ion-card class="card-exercices hover-effect" (click)="goToListExercices($event)">
@@ -38,4 +39,5 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
 </ion-content>
