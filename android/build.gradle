@@ -27,13 +27,3 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-
-buildscript {
-    ext {
-        // Versions recommandées
-        compileSdkVersion = 33
-        targetSdkVersion = 33
-        minSdkVersion = 21
-        buildToolsVersion = "33.0.0"
-    }
-}

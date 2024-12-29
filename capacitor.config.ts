@@ -1,9 +1,10 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'com.cymath',
   appName: 'cymath',
-  webDir: 'www'
+  webDir: 'www',
+  bundleWebRuntime:false
 };
 
 export default config;
