@@ -1,0 +1,92 @@
+/* src/pages/Loading.css */
+.class-ion-toolbar {
+     --background:rgb(55, 201, 201);
+    color: rgb(17, 17, 17);
+  font-weight: bold;
+
+}
+
+.class-ion-content {
+  --background: rgb(11, 12, 12);
+  text-align: -moz-center;
+}
+
+.class-ion-content-spinner{
+   margin: 2%;
+    padding: 2%;
+}
+.loading-text{
+    margin: 3%;
+    padding: 5%;
+     background:rgb(31, 102, 90);
+     color: rgb(193, 233, 16);
+
+}
+
+.class-ion-footer{
+    --background:rgb(55, 201, 201);
+   color: hsl(0, 0.00%, 2.00%);
+   
+  text-align: -moz-center;
+  font-weight: bold;
+}
+
+/* src/pages/Home.css */
+.class-ion-content {
+  padding: 16px;
+}
+
+ion-card {
+  margin-bottom: 16px;
+}
+
+
+
+/* src/pages/Home.css */
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Utiliser space-around pour répartir les cartes */
+   gap: 16px;
+  padding: 16px;
+}
+
+.card-item {
+  flex: 1 1 calc(50% - 32px); 
+  max-width: calc(50% - 32px);
+  min-width: 280px; 
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(226, 214, 214, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card-cours{
+ color: rgb(193, 233, 16);
+  --background:rgb(21, 70, 231);
+}
+.card-exercice{
+color: rgb(235, 238, 223);
+ --background:rgb(19, 236, 84);
+}
+
+.card-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgb(245, 238, 238);
+}
+.card-cours:hover,.card-exercice:hover, ion-card-title:hover{
+    color: rgb(51, 203, 223);
+    background: rgb(50, 51, 46);
+}
+/* ion-card-title:hover{
+    color: rgb(51, 203, 223);
+} */
+/* Médias queries pour petits écrans */
+ @media (max-width: 768px) {
+  .card-item {
+    flex: 1 1 100%; 
+    max-width: 100%;
+  }
+} 
+
