@@ -1,0 +1,36 @@
+/* src/pages/Loading.css */
+.class-ion-toolbar-loading {
+    --background:rgb(31, 102, 90);
+    color: rgb(193, 233, 16);
+    text-align: -moz-center;
+  font-weight: bold;
+
+}
+.class-ion-toolbar-title{
+
+}
+.class-ion-content-loading {
+  --background: rgb(53, 66, 78);
+  text-align: -moz-center;
+}
+
+.class-ion-content-spinner{
+   margin: 2%;
+    padding: 2%;
+}
+.loading-text{
+    margin: 3%;
+    padding: 5%;
+     background:rgb(31, 102, 90);
+     color: rgb(193, 233, 16);
+
+}
+
+.class-ion-footer-loading{
+  --background:rgb(31, 102, 90);
+   color: hsl(138, 83.70%, 48.20%);
+   
+  text-align: -moz-center;
+  font-weight: bold;
+}
+
