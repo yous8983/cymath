@@ -3,6 +3,7 @@ import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFooter, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonRouterLink, IonIcon } from '@ionic/react';
 import { bookOutline, checkmarkDoneOutline } from 'ionicons/icons'; // Import des icônes
 import './Home.css';
+// import Cours from './pages/Cours/cours';
 
 const Home: React.FC = () => {
   return (

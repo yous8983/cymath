@@ -1,0 +1,93 @@
+ion-toolbar {
+  --background:rgb(8, 8, 8); /* Remplacez par la couleur ou l'image de votre choix */
+}
+
+
+.home-icon {
+  font-size: 24px;
+  color: var(--ion-color-primary);
+  margin-right: 8px;
+}
+.description-inactive {
+    color: rgb(97, 100, 100); 
+}
+.description-active {
+  color: rgb(2, 4, 95); 
+  background:rgb(32, 121, 10); 
+  font-weight: bold;
+}
+
+.cours-domaine-item{
+    color: var(--ion-color-primary);
+     background:rgb(12, 12, 12); 
+    border: 2px double blue;
+    margin-top:5px;
+    margin-left: 7px;
+    margin-right: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+       font-weight:bold;
+  
+}
+.cours-domaine-item:last-child {
+  margin-bottom: 20px; 
+  padding-bottom: 20px; 
+  /* Remplacez 20px par la valeur souhaitée */
+}
+
+.cours-domaine-div{
+    color: var(--ion-color-warning);
+    margin-left: 7px;
+    margin-right: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+   
+  
+}
+.cours-titre-item{
+    color: rgb(70, 201, 19);;
+    background:rgb(162, 245, 130);
+    font-weight:bold;
+    margin-top:3px;
+    margin-left: 7px;
+    margin-right: 7px;
+    padding-left: 8px;
+    padding-right: 8px;
+  
+}
+.cours-titre-label{
+    color: rgb(18, 46, 7);;
+    font-weight:bold;
+    margin-top:3px;
+    margin-left: 7px;
+    margin-right: 7px;
+    padding-left: 8px;
+    padding-right: 8px;
+  
+  
+}
+
+.cours-titre-div{
+    color: rgb(18, 46, 7);
+    background:rgb(13, 15, 12);
+    font-weight:bold;
+    margin-top:3px;
+    margin-left: 17px;
+    margin-right: 17px;
+    padding-left: 8px;
+    padding-right: 8px;
+     
+  
+} 
+
+.cours-desc {
+  /* background-color:rgb(206, 217, 231);  */
+  /* Couleur de fond par défaut */
+  max-width: max-content;
+  transition: background-color 0.3s ease; /* Transition douce pour le changement de couleur */
+}
+
+.cours-desc:hover {
+  /* background-color:rgb(12, 12, 12); Nouvelle couleur de fond lors du survol */
+  color:rgb(18, 243, 10);
+}
