@@ -1,7 +1,4 @@
 
-
-//=======================
-
 import React, { useState } from 'react';
 import {
   IonPage,
@@ -20,7 +17,7 @@ import {
   IonIcon,
   IonRouterLink
 } from '@ionic/react';
-import { coursList } from '../../data/data';
+import { coursList } from '../../data/cours';
 import './cours.css';
 import { home } from 'ionicons/icons';
 
@@ -29,18 +26,18 @@ const Cours: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
+      <IonHeader className="cours-header">
         <IonToolbar>
           <IonButtons slot="start">
             <IonButton routerLink="/home">
-              <IonIcon icon={home} />
-              <IonTitle>Cours</IonTitle>
+              <IonIcon  icon={home} />
+              <IonTitle >Cours</IonTitle>
             </IonButton>
           </IonButtons>
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen>
+      <IonContent fullscreen className="cours-content">
         <IonAccordionGroup value={activeAccordion} >
           {coursList.map((cours) => (
             <IonAccordion  key={cours.id} value={`domaine-${cours.id}`}>
@@ -56,17 +53,7 @@ const Cours: React.FC = () => {
                       </IonItem>
                       <div slot="content" className="cours-titre-div">
                         <IonList>
-                          {/* {chapitre.descriptions.map((desc, index) => (
-                            <IonItem
-                              key={index}
-                              className={desc.disponible ? 'description-active ' : 'description-inactive '}
-                            >
-                              <IonLabel>{desc.titre}</IonLabel>
-                              <IonText slot="end" color={desc.disponible === true ? 'bold' : ''}>
-                                {desc.disponible === true ? 'Disponible' : 'Non disponible'}
-                              </IonText>
-                            </IonItem>
-                          ))} */}
+                      
    {chapitre.descriptions.map((desc, index) => (
   <IonRouterLink key={index} routerLink={`/description/${desc.id}`}>
     <IonItem

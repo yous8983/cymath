@@ -1,5 +1,5 @@
 
-// src/data/data.ts
+
 
 export interface Description {
   id: number;
@@ -7,11 +7,14 @@ export interface Description {
   disponible: boolean;
 }
 
+
 export interface Chapitre {
   id: number;
   titre: string;
   descriptions: Description[];
+
 }
+
 
 export interface Cours {
   id: number;
@@ -245,28 +248,3 @@ export const coursList: Cours[] = [
   },
 ];
 
-
-
-export interface Exercice {
-  id: number;
-  titre: string;
-  description: string;
-  solution: string;
-}
-
-
-export const exercicesList: Exercice[] = [
-  {
-    id: 1,
-    titre: 'Exercice sur les Matrices',
-    description: 'Calculer le déterminant de la matrice suivante...',
-    solution: 'Solution détaillée de l\'exercice sur les matrices...'
-  },
-  {
-    id: 2,
-    titre: 'Exercice sur les Dérivées',
-    description: 'Trouver la dérivée de la fonction suivante...',
-    solution: 'Solution détaillée de l\'exercice sur les dérivées...'
-  }
-  // Ajoutez d'autres exercices ici
-];

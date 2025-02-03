@@ -1,0 +1,106 @@
+/* Hover effect for available 'Énoncé' or 'Corrigé' */
+.option-link:hover {
+  /* background: rgba(0, 0, 0, 1.0); Light gray background */
+  background: rgb(167, 19, 19);
+  color:rgb(35, 36, 37); /* Change color on hover */
+  /* text-decoration: underline; */
+
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 25px;
+  border: 2px solid rgb(67, 98, 197);
+}
+.exercices-titre:hover{
+background: rgb(12, 204, 115);
+}
+.exercices-titre-enonce:hover{
+background: rgb(33, 109, 224);
+
+}
+.exercices-titre-corrige:hover{
+background: rgb(12, 204, 115);
+
+}
+/* Specific class to highlight available items */
+.description-active {
+  color: rgb(5, 31, 102);
+  background: rgb(32, 121, 10);
+  font-weight: bold;
+}
+
+.description-inactive {
+  color: rgb(97, 100, 100);
+}
+
+/* Ensure available links (Enoncé/Corrigé) are shown properly */
+.options-container .option-link {
+  margin-right: 10px; /* Add space between the options */
+}
+
+.enonce-toolbar {
+  --background: #0d47a1; /* Dark blue background */
+  --color: #ffffff;      /* White text color */
+}
+
+.corrige-toolbar {
+  --background:rgb(14, 238, 25); /* Light green background */
+  --color: #000000;      /* Black text color */
+}
+.exercices-enonce{
+ color:rgb(12, 12, 12); 
+}
+.exercices-corrige{
+  color:rgb(14, 238, 25);
+}
+
+
+.exercices-header {
+  --ion-background-color:rgb(13, 41, 34);
+   /* --ion-background-color: black; */
+}
+.exercices-domaine-item{
+  color: var(--ion-color-primary);
+     background:rgb(12, 12, 12); 
+    border: 2px double blue;
+    margin-top:5px;
+    margin-left: 7px;
+    margin-right: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+       font-weight:bold;
+}
+.exercices-titre-item{
+    color: rgb(70, 201, 19);;
+    background:rgb(162, 245, 130);
+    font-weight:bold;
+    margin-top:3px;
+    margin-left: 7px;
+    margin-right: 7px;
+    padding-left: 8px;
+    padding-right: 8px;
+  
+}
+.exercices-titre-label{
+    color: rgb(18, 46, 7);;
+    font-weight:bold;
+    margin-top:3px;
+    margin-left: 7px;
+    margin-right: 7px;
+    padding-left: 8px;
+    padding-right: 8px;
+  
+  
+}
+
+.exercices-titre-div{
+    color: rgb(18, 46, 7);
+    background:rgb(13, 15, 12);
+    font-weight:bold;
+    margin-top:3px;
+    margin-left: 17px;
+    margin-right: 17px;
+    padding-left: 8px;
+    padding-right: 8px;
+     
+  
+} 

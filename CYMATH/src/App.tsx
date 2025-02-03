@@ -5,6 +5,7 @@ import { Route, Redirect } from 'react-router-dom';
 import Home from './pages/Home';
 import Loading from './pages/Loading/loading';
 import Cours from './pages/Cours/cours';
+import Exercices from './pages/Exercices/exercices';
 
 
 
@@ -36,6 +37,7 @@ const App: React.FC = () => (
         <Route path="/loading" component={Loading} exact />
         <Route path="/home" component={Home} exact />
         <Route path="/cours" component={Cours} exact />
+        <Route path="/exercices" component={Exercices} exact />
         <Route exact path="/">
           <Redirect to="/loading" />
         </Route>
